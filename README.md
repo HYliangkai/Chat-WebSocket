@@ -1,2 +1,2 @@
 # Chat-WebSocket
-make a chat web use websocket
+用websocket打造的聊天室网页

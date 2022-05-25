@@ -1,0 +1,83 @@
+//设计的scss
+
+
+
+//主色调 绿色？
+$color:(
+    primary:rgb(62,181,117),
+    //次色调：
+    subordinate:rgb(249, 244, 230),
+    //警告
+    warning:rgb(240,74,58),
+    "black":black,
+    "white":white,
+    //灰色分梯度
+    "grey-0":rgb(86,63,46),
+    "grey":rgb(122,115,116),
+    "grey-1":rgb(138,140,142),
+	"grey-2":rgb(214,214,214),
+);
+
+//边框色
+$border-b:map-get($map: $color, $key:'grey');
+
+//梯度
+$standard:1rem;
+$dimension:(
+    "0":0,
+    "0-1":0.125*$standard,
+    "0-2":0.25*$standard,
+    "0-3":0.5*$standard,
+    "0-4":0.75*$standard,
+    "1":$standard,
+    "2":1.25*$standard,
+    "3":1.5*$standard,
+    "4":2*$standard,
+    "5":3*$standard,
+);
+
+// 方向
+$direction:(
+    "t":top,
+    "b":bottom,
+    "r":right,
+    "l":left,
+);
+
+//flex方式
+$mannerofjc:(
+    start:flex-start,
+    end:flex-end,
+    center:center,
+    between:space-between,
+    around:space-around
+);
+$mannerofai:(
+    start:flex-start,
+    end:flex-end,
+    center:center,
+    baseline:baseline,
+    stretch:stretch
+);
+$mannerofac:(
+    start:flex-start,
+    end:flex-end,
+    center:center,
+    between:space-between,
+    stretch:stretch,
+	around:space-around
+);
+$pm:(
+    p:padding,
+    m:margin,
+);
+
+$size:(
+    xs:0.5rem,
+    s:0.75rem,
+    m:1rem,
+    l:1.25rem,
+    xl:1.5rem,
+    xxl:2rem
+)
+

@@ -1,0 +1,150 @@
+// 引用的scss
+
+@import './main.scss';
+
+//样式清空
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Comic Sans MS', Arial, Helvetica, sans-serif;
+    line-height: 1.2rem;
+    background-color: #f1f1f1;
+    -webkit-flow-smoothing: antialiased;
+}
+
+//字体大小
+@each $var,
+$it in $dimension {
+    .fs-#{$var} {
+        font-size: $it
+    }
+}
+
+//字体位置
+@each $var in (left,right,center) {
+    .f-#{$var}{
+        text-align: $var;
+    }
+}
+
+//字体颜色
+@each $var,
+$it in $color {
+    .fc-#{$var} {
+        color: $it
+    }
+}
+
+;
+
+//padding和margin
+@each $var,
+$it in $pm {
+
+    @each $var2,
+    $it2 in $dimension {
+        .#{$var}-x-#{$var2} {
+            #{$it}-left: $it2;
+            #{$it}-right: $it2;
+        }
+
+        ;
+
+        .#{$var}-y-#{$var2} {
+            #{$it}-top: $it2;
+            #{$it}-bottom: $it2;
+        }
+    }
+
+    ;
+
+    @each $var2,
+    $it2 in $dimension {
+
+        @each $var1,
+        $it1 in $direction {
+            .#{$var}-#{$var1}-#{$var2} {
+                //写前缀的时候要用模板字符串
+                #{$it}-#{$it1}: $it2
+            }
+
+            ;
+        }
+
+        .#{$var}-#{$var2} {
+            #{$it}: $it2
+        }
+    }
+}
+
+;
+
+//边框
+@each $var,
+$it in $direction {
+    .b-#{$var} {
+        border-#{$it}: 1px solid $border-b;
+    }
+}
+.b {
+    border: 1px solid $border-b;
+}
+
+//flex布局
+.d-flex{
+    display: flex;
+}
+@each $var,$it in $mannerofjc {
+    .jc-#{$var}{ 
+        justify-content: $it;
+    }
+}
+
+@each $var,$it in $mannerofai {
+    .ai-#{$var}{ 
+        align-items:$it;
+    }
+}
+@each $var,$it in $mannerofac {
+	.ac-#{$var}{
+		align-items: $it;
+	}
+}
+//变主轴方向
+.column{
+    flex-direction: column;
+}
+//剩余填充
+.grow{
+    flex-grow: 1;
+}
+//换行
+.warp{
+    flex-wrap: wrap;
+}
+
+//字体变粗
+.fw{
+    font-weight: bolder;
+}
+//背景颜色
+@each $var,$it in $color {
+    .bg-#{$var}{ 
+        background-color: $it;
+    }
+}
+
+@each $var,$it in $size {
+    .fs-#{$var}{
+        font-size: $it;
+    }
+}

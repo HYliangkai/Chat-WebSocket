@@ -48,6 +48,7 @@ export default {
         this.$message.info('此用户名已注册baby')
       }else if(rep.data.username){
         sessionStorage.username=rep.data.username
+        sessionStorage.id=rep.data._id
         this.$message.success('注册成功')
         this.$router.replace('/main')
       }
@@ -56,6 +57,7 @@ export default {
       let rep=await this.$http.get(`login?username=${this.username}&password=${this.password}`)
       if(rep.data.username){
         sessionStorage.username=rep.data.username
+        sessionStorage.id=rep.data._id
         this.$message.success('登录成功')
         this.$router.replace('/main')
       }else{

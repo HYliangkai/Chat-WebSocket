@@ -1,15 +1,21 @@
 <template>
 <div class="chatinfo">
     <!-- 聊天框 -->
-    <div class="inff" v-if="false">
-    <span class="kuan">tou</span>
-    <span class="context">什么时候去吃饭什么什么和啊我不懂是逆不哟啊什么都问问啊我啊,sdjbdiwdnckl成功i茶匙从背后美女美女美女hi十四行诗实时</span>
+    <div class="inff"  v-if="!direction" >
+    <span class="kuan"></span>
+    <span class="context">
+        <span class="in" style="background-color:rgb(255,255,255) ;">
+            {{context}}
+        </span>
+    </span>
     </div>
-    <div class="inffe" v-if="true">
-    <div class="contextout">
-    <span class="context">啊什么都问dihxxxxxxxxxxxxxxxxxxxxxxxxxxxxsi十四行诗实时</span>
-    </div>
-    <span class="kuan2">tou</span>
+    <div class="inffe"  v-if="direction" >
+    <span class="context2">
+        <span class="in" style="background-color:rgb(149, 236, 105) ;">
+            {{context}}
+        </span>
+    </span>
+    <span class="kuan2"></span>
     </div>
 </div>
 </template>
@@ -17,7 +23,7 @@
 <script>
 export default {
 props:{
-    direction:'',
+    direction:Boolean,
     context:'',
     
 },
@@ -29,15 +35,17 @@ created() {
 
 <style scoped lang="scss">
 .chatinfo{
-
-    margin-bottom: 2rem;
-
+    margin-bottom: 1.5rem;
 }
-.inff{display: flex;align-items: center;}
+.inff{
+    display: flex;
+    align-items: center;
+}
 .inffe{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    
 }
 .kuan2{
     margin-left:1rem ;
@@ -45,7 +53,7 @@ created() {
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 0.3rem;
-    background-color: antiquewhite;
+    background-color:burlywood
 }
 .kuan{
     margin-left:2rem ;
@@ -56,13 +64,19 @@ created() {
     background-color: antiquewhite;
 }
 .context{
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
-    background-color:chocolate;
+    // background-color:chocolate;
 }
-.contextout{
-    width: 25rem;
-    background-color: brown;
-    border-radius:.2rem;
-    }
+.context2{
+    width: 60%;
+    // background-color: royalblue;
+    display: flex;
+    justify-content: flex-end;
+}
+.in{
+    padding: .4rem;
+    border-radius: .3rem;
+}
 </style>

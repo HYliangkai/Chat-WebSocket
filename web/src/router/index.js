@@ -3,7 +3,10 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 Vue.use(VueRouter)
-
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => err)
+}
 const routes = [
   {
     path: '/',
@@ -13,17 +16,7 @@ const routes = [
   // 小tips:设置二级路由的时候一级路由不能有名字
   { path:'/main',
     component:()=>import('../views/main.vue'),
-    children: [
-      { path:'/',
-        name:'defalut',
-      component:()=>import('../views/defalut.vue')},
-      {
-        path: '/chat/:accept',
-        name: 'chat',
-        component: () => import('../views/chat.vue'),
-        props: true
-      },
-    ]
+    children: []
 },
 ]
 

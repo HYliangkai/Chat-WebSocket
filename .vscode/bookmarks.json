@@ -1,0 +1,34 @@
+{
+	"files": [
+		{
+			"path": "web/src/views/HomeView.vue",
+			"bookmarks": [
+				{
+					"line": 41,
+					"column": 4,
+					"label": "log"
+				}
+			]
+		},
+		{
+			"path": "server/router/socket.js",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 26,
+					"label": "socket"
+				}
+			]
+		},
+		{
+			"path": "web/src/views/main.vue",
+			"bookmarks": [
+				{
+					"line": 24,
+					"column": 51,
+					"label": ""
+				}
+			]
+		}
+	]
+}
